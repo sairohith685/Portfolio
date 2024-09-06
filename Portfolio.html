@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="Portfolio1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" /></head>
+<body>
+    
+    <div id="header">
+        <div class="container">
+            <nav>
+                <div id="clock"></div>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Achievements</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul> 
+            </nav>
+            <div class="header-text">
+                <h1>Hi, I'm <span>Sai Rohith</span> <br> from VNRVJIET</h1>
+            </div>
+        </div>
+    </div>
+    
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <h1>About Me</h1>
+                </div>
+                <div>
+                    <p>To seek challenging avenues where my knowledge and experience are in the same line of the organization’s growth and to continue to achieve organizational goals with the betterment of career prospects</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('education')">Education</p>
+                        <p class="tab-links" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('certifications')">Certifications</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="education">
+                        <ul>
+                            <li><span>2021-2025&nbsp;&nbsp;&nbsp;&nbsp;</span>B.Tech(AI & DS)<br>VNRVJIET<br>8.2 CGPA</li>
+                            <li><span>2019-2021&nbsp;&nbsp;&nbsp;&nbsp;</span>Intermediate<br>Sri Chaitanya Junior College of Education,Madhapur<br>95.4%</li>
+                            <li><span>2019&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>SSC<br>Sri Chaitanya Educational Institutions, Kompally<br>9.7 CGPA</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="skills">
+                        <ul>
+                            <li><span>Programming Languages</span><br>C, Python, Java</li>
+                            <li><span>Software tools</span><br>R Studio, Microsoft Excel, Star UML</li>
+                            <li><span>Technologies</span><br>
+                                Web Development, Machine Learning, DataScience
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="certifications">
+                        <ul>
+                            <li>•&nbsp;Certification in <span>Full Stack Development</span> from VNRVJIET.</li>
+                            <li>•&nbsp;Elite Certificate in <span>Introduction to ML by NPTEL.</span></li>
+                            <li>•&nbsp;<span>Data Science</span> by Bharat Intern.</li>
+                            <li>•&nbsp;<span>Supervised Machine Learning</span> by Coursera.</li>
+                            <li>•&nbsp;<span>Introduction to Unix</span> by Infosys Springboard</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="projects">
+        <div class="container">
+            <h1 class="sub-title">My Projects</h1>
+            <div class="projects-list">
+                <div>
+                    <h2>Campus – Query Bot</h2>
+                    <p>Implemented state-of-the-art voice recognition technology from the Speech Recognition library, slashing manual input errors by 50% and revolutionizing user interaction.</p>
+                </div>
+                <div>
+                    <h2>Weather Forecasting</h2>
+                    <p>The vanishing gradient issue with conventional RNNs is the reason this project uses LSTM. A dataset with 20,000 observations and 8 parameters was used, and the model was painstakingly trained over 100 epochs once the data was encoded.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="achievements">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <h1>Achievements</h1>
+                </div>
+                <div>
+                    <ul>
+                        <li>Secured first place in Project Contest.</li>
+                        <li>Stood second position in the esteemed College Technical Fest Paper presentation competition.</li>
+                        <li>Earned a 5-Star Badge in Data Structures & Algorithms and C Language on HackerRank.</li>
+                        <li>Secured 1st Position in INNOVATION SPARK conducted by the Department of CSE.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <h1>Contact Me</h1>
+                </div>
+                <div class="contact-details">
+                    <p><i class="fa-solid fa-envelope"></i>sairohith685@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i>7893439521</p>
+                    <div class="social-icons">
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                        <a href=""><i class="fa-brands fa-twitter-square"></i></a>
+                        <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+    function updateClock() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        const timeString = ${hours}:${minutes}:${seconds};
+        document.getElementById('clock').innerText = timeString;
+      }
+    
+      setInterval(updateClock, 1000); // Update every second
+      updateClock(); 
+</script>
+</body>
+</html>
